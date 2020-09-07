@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.bigball {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+  animation: bigbounce 0.7s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  animation: bounce 0.7s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+}
+
+.ballBounceAndChangeColor {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  animation: bounceAndChangeColor 0.7s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+}
+
+.nobounceball {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.colorChangingBall {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  animation: colorChange 3s infinite;
+}
+
+.orangeToBlue {
+  animation: colorChange 3s infinite;
+}
+
+.orange {
+  background-color: #FF5722;
+}
+
+.blue {
+  background-color: #225dff;
+}
+
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 50px, 0); }
+}
+
+@keyframes bounceAndChangeColor {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 50px, 0); }
+  0% { background-color: #FF5722;     }
+  50% { background-color: #225dff;     }
+  100% { background-color: #FF5722;     }
+}
+
+@keyframes bigbounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 500px, 0); }
+  0% { background-color: #FF5722;     }
+  50% { background-color: #225dff;     }
+  100% { background-color: #FF5722;     }
+}
+
+@keyframes colorChange {
+  0% { background-color: #FF5722;     }
+  50% { background-color: #225dff;     }
+  100% { background-color: #FF5722;     }
+}
+
+/* Prefix Support */
+ball {
+  -webkit-animation-name: bounce;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+  from { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  to   { -webkit-transform: translate3d(0, 200px, 0); transform: translate3d(0, 200px, 0); }
+}
